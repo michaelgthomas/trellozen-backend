@@ -1,0 +1,42 @@
+{
+    "name": "trellozen",
+    "version": "0.1.0",
+    "description": "Trellozen - a Trello integration built for offerzen",
+    "main": "src/index.js",
+    "scripts": {
+      "dev": "nodemon src/index.js",
+      "test": "npm run test",
+      "lint-staged": "lint-staged"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/michaelgthomas/trellozen.git"
+    },
+    "keywords": [
+      "discord",
+      "bot"
+    ],
+    "author": "Michael G. Thomas <michael2907@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/michaelgthomas/trellozen/issues"
+    },
+    "homepage": "https://github.com/michaelgthomas/trellozen#readme",
+    "dependencies": {
+      "dotenv-safe": "^8.2.0",
+      "eslint": "^7.12.1",
+      "eslint-config-standard": "^16.0.1",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-node": "^11.1.0",
+      "eslint-plugin-promise": "^4.2.1",
+      "eslint-plugin-standard": "^4.0.2",
+      "lint-staged": "^10.5.0",
+      "nodemon": "^2.0.6",
+      "nyc": "^15.1.0",
+      "pre-commit": "^1.2.2"
+    },
+    "lint-staged": {
+      "*.js": "eslint"
+    },
+    "pre-commit": "lint-staged"
+  }
