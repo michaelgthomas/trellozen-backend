@@ -6,6 +6,7 @@ const { router } = require('./router')
 const port = process.env.PORT || 3000
 
 app.use(router.routes()).use(router.allowedMethods())
+
 if (env !== 'test') {
   require('dotenv-safe').config({ silent: true })
 }
