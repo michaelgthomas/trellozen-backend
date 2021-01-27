@@ -3,7 +3,7 @@ const Koa = require('koa')
 const app = new Koa()
 const { router } = require('./router')
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 app.use(router.routes()).use(router.allowedMethods())
 

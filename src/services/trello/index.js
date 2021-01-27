@@ -7,6 +7,7 @@ function errorHandler (ctx, err) {
 }
 
 async function fetchTrelloBoard (ctx) {
+  ctx.set('Access-Control-Allow-Origin', '*')
   const { TRELLO_API_URL, TRELLO_API_KEY, TRELLO_TOKEN } = process.env
   try {
     const response = await fetch(
@@ -21,6 +22,7 @@ async function fetchTrelloBoard (ctx) {
 }
 
 async function fetchTrelloLists (ctx) {
+  ctx.set('Access-Control-Allow-Origin', '*')
   const { TRELLO_API_URL, TRELLO_API_KEY, TRELLO_TOKEN } = process.env
   try {
     const response = await fetch(
@@ -51,6 +53,7 @@ async function createTodoCard (ctx) {
   // The assisgnment specifically states to add the card to the TODO list (not to give the user an option) - thus we specifically search for the To Do list
   // rather than having this dynamic
   // If we were to give the user an option we would pass the list id through as part of the request body
+  ctx.set('Access-Control-Allow-Origin', '*')
   const { TRELLO_API_URL, TRELLO_API_KEY, TRELLO_TOKEN } = process.env
   try {
     const response = await fetch(
@@ -62,6 +65,7 @@ async function createTodoCard (ctx) {
     const { id: todoListId } = todoList
 
     const { name: cardName } = JSON.parse(ctx.request.body)
+
     const postResponse = await fetch(
         `${TRELLO_API_URL}/1/cards?name=${cardName}&idList=${todoListId}&key=${TRELLO_API_KEY}&token=${TRELLO_TOKEN}`,
         { method: 'POST' }
